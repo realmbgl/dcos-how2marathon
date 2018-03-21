@@ -1,13 +1,13 @@
-# Creating Enterprise Grade Marathon Services
+# Developing Enterprise Grade Marathon Services
 
-This repository shows by sample how to develop enterprise grade marathon services supporting the following.
+This guide shows by sample how to develop enterprise grade marathon services supporting the following.
 
 - ucr
     - why ucr
     - cmd and fetch
     - cmd and image
     - cmd and endless loop
-    - interactive exploration
+    - using container console, interactive container exploration
 
 
 - service account
@@ -26,9 +26,15 @@ This repository shows by sample how to develop enterprise grade marathon service
 - host and virtual networking
     - host networking
     - virtual networking
-    - moustache templating, dual mode support
+    - moustache templating, virtual networking on/off
+
 
 - tls support
+    - creating a certificate request
+    - a tls service enpoint implementation
+    - a tls service endpoint implementation requiring client authentication
+    - moustache templating, tls on/off
+
 
 - ...
 
