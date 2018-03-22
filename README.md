@@ -24,8 +24,8 @@ This guide shows by sample how to develop enterprise grade marathon services sup
  
  
 - [networking](networking.md)
-    - host networking
-    - virtual networking
+    - host network
+    - virtual network
     - moustache templating, virtual networking on/off
 
 
