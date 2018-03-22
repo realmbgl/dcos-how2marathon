@@ -2,7 +2,7 @@
 
 This guide shows by sample how to develop enterprise grade marathon services supporting the following.
 
-- ucr
+- [ucr](ucr.md)
     - why ucr
     - cmd and fetch
     - cmd and image
@@ -10,26 +10,26 @@ This guide shows by sample how to develop enterprise grade marathon services sup
     - using container console, interactive container exploration
 
 
-- service account
+- [service account](service-account.md)
     - when do you need a service account
     - create service accout and service account secret
     - configure the service with service account and service account secret
     - moustache templating
 
 
-- multi tenancy
+- [multi tenancy](multi-tenancy.md)
     - service names scoped by folders/groups
     - mapping fully qualified service name to vip name
     - moustache templating, configurable service name
  
  
-- host and virtual networking
+- [networking](networking.md)
     - host networking
     - virtual networking
     - moustache templating, virtual networking on/off
 
 
-- tls support
+- [tls](tls.md)
     - creating a certificate request
     - a tls service enpoint implementation
     - a tls service endpoint implementation requiring client authentication
