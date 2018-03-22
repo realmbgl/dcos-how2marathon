@@ -36,6 +36,12 @@ This guide shows by sample how to develop enterprise grade marathon services sup
     - moustache templating, tls on/off
 
 
+- healthchecks
+    - tls off
+    - tls on 
+    - tls on and client-auth on
+
+
 - volumes
     - local persistent volumes
     - external persistent volumes
