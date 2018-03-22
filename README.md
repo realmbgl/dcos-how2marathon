@@ -36,5 +36,9 @@ This guide shows by sample how to develop enterprise grade marathon services sup
     - moustache templating, tls on/off
 
 
-- ...
+- volumes
+
+- service configuration
+
+
 
