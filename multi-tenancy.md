@@ -1,8 +1,8 @@
-# multi tenancy
+## multi tenancy
 
 
-## service names scoped by folders/groups
+### service names scoped by folders/groups
 
-## mapping fully qualified service name to vip name
+### mapping fully qualified service name to vip name
 
-## moustache templating, configurable service name
+### moustache templating, configurable service name
