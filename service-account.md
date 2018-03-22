@@ -47,8 +47,8 @@ dcos security org users grant my-service-acct dcos:superuser full
 
 using it to login to dc/os from your service
 ```
-cat service_account_secret | jq -r .private_key > service_account_key.pem 
-chmod 600 service_account_key.pem
+cat service_account_secret | jq -r .private_key > service_acct_key.pem 
+chmod 600 service_acct_key.pem
 dcos cluster setup https://leader.mesos --ca-certs=.ssl/ca-bundle.crt --username=$SERVICE_ACCOUNT --private-key=service_acct_key.pem
 ```
 
