@@ -49,7 +49,7 @@ This guide shows by sample how to develop enterprise grade marathon services sup
 - placement constraints
 
 - service configuration
-    - endpoint configuration
+    - service/endpoint configuration
     - implementation configuration
     - depending service configuration 
     
