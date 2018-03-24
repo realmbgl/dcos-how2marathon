@@ -27,7 +27,7 @@
     "type": "MESOS",
     "docker": {
       "image": "nginx:latest",
-	    "forcePullImage": true
+      "forcePullImage": true
     },
   },
   "cmd": "nginx -g 'daemon off;'"
