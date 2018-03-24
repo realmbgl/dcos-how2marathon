@@ -4,7 +4,6 @@
 ### creating a certificate request
 
 ```
-
 #!/bin/bash
   
 # setup dcos cli
@@ -28,8 +27,8 @@ cat servicecert.json | jq -r .private_key > service.key
 
 ```
 
+marathon.json
 ```
-
 {
   "id": "service",
   "cmd": "chmod +x setup.sh && ./setup.sh && ...",
@@ -63,7 +62,6 @@ cat servicecert.json | jq -r .private_key > service.key
 
 server.js
 ```
-
 var express = require('express');
 var http = require('http');
 var https = require('https');
@@ -86,7 +84,6 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
 
 marathon.json
 ```
-
 {
   "id": "node-server",
   "cmd": "chmod +x setup.sh && ./setup.sh && nodejs server.js $PORT0",
