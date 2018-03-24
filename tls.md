@@ -31,7 +31,6 @@ marathon.json
 ```
 {
   "id": "service",
-  "cmd": "chmod +x setup.sh && ./setup.sh && ...",
   "container": {
     "type": "MESOS",
     ...
@@ -42,6 +41,10 @@ marathon.json
       }
     ]
   },
+  "fetch": [
+    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"},
+    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh"}
+  ],
   "secrets": {
     "service-acct-secret": {
       "source": "my-service-acct-secret"
@@ -50,10 +53,7 @@ marathon.json
   "env": {
     "SERVICE_ACCOUNT": "my-service-acct"
   },
-  "fetch": [
-    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh"},
-    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"}
-  ]
+  "cmd": "chmod +x setup.sh && ./setup.sh && ..."
 }
 
 ```
@@ -85,8 +85,7 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
 marathon.json
 ```
 {
-  "id": "node-server",
-  "cmd": "chmod +x setup.sh && ./setup.sh && nodejs server.js $PORT0",
+  "id": "service",
   "container": {
     "type": "MESOS",
     "docker": {
@@ -95,14 +94,18 @@ marathon.json
     },
     "volumes": [
       {
-        "containerPath": "service_account_secret",
-        "secret": "service-account-secret"
+        "containerPath": "service_acct_secret",
+        "secret": "service-acct-secret"
       }
     ]
   },
+  "fetch": [
+    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"},
+    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh"}
+  ],
   "secrets": {
-    "service-account-secret": {
-      "source": "my-secret"
+    "service-acct-secret": {
+      "source": "my-service-acct-secret"
     }
   },
   "networks": [
@@ -119,16 +122,13 @@ marathon.json
       }
   } ],
   "env": {
-    "HOME": "/root",
     "SERVICE_ACCOUNT": "my-service-acct"
   },
-  "fetch": [
-    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh"},
-    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"}
-  ]
+  "cmd": "chmod +x setup.sh && ./setup.sh && nodejs server.js $PORT"
 }
 
 ```
+
 
 ### a tls service endpoint implementation requiring client authentication
 
@@ -171,10 +171,8 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
 
 marathon.json
 ```
-
 {
-  "id": "node-server",
-  "cmd": "chmod +x setup.sh && ./setup.sh && nodejs server.js $PORT0",
+  "id": "service",
   "container": {
     "type": "MESOS",
     "docker": {
@@ -183,14 +181,18 @@ marathon.json
     },
     "volumes": [
       {
-        "containerPath": "service_account_secret",
-        "secret": "service-account-secret"
+        "containerPath": "service_acct_secret",
+        "secret": "service-acct-secret"
       }
     ]
   },
+  "fetch": [
+    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"},
+    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh"}
+  ],
   "secrets": {
-    "service-account-secret": {
-      "source": "my-secret"
+    "service-acct-secret": {
+      "source": "my-service-acct-secret"
     }
   },
   "networks": [
@@ -207,13 +209,9 @@ marathon.json
       }
   } ],
   "env": {
-    "HOME": "/root",
     "SERVICE_ACCOUNT": "my-service-acct"
   },
-  "fetch": [
-    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh"},
-    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"}
-  ]
+  "cmd": "chmod +x setup.sh && ./setup.sh && nodejs server.js $PORT"
 }
 
 ```
