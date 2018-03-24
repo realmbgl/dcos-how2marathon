@@ -46,6 +46,7 @@ This guide shows by sample how to develop enterprise grade marathon services sup
     - local persistent volumes
     - external persistent volumes
 
+- placement constraints
 
 - service configuration
     - endpoint configuration
