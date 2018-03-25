@@ -35,7 +35,7 @@ marathon.json
   "portDefinitions": [ {
       ...
       "labels": {
-        "VIP_0": "org1-spaces1-service:8080"
+        "VIP_0": "/org1/spaces1/service:8080"
       }
   } ],
   "cmd": "<executable> $PORT0"
