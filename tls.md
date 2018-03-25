@@ -16,7 +16,7 @@ In the next section we show how you can create your own certificate requests for
 ### creating a certificate request for your service
 
 *setup.sh* a scipt to create your specific service.crt and service.key file.
-```
+```sh
 #!/bin/bash
   
 # setup dcos cli
@@ -41,7 +41,7 @@ cat servicecert.json | jq -r .private_key > service.key
 ```
 
 *marathon.json*, shows the download of the dc/os cli and the setup.sh script, and how you run setup.sh in cmd before any other execution.
-```
+```js
 {
   "id": "service",
   "container": {
@@ -74,7 +74,7 @@ cat servicecert.json | jq -r .private_key > service.key
 ### a tls service enpoint implementation
 
 *service.js*, a service endpoint implementation using node js with tls enabled, you can see how key and cert get configured with the files created from the setup.sh script.
-```
+```js
 var express = require('express');
 var http = require('http');
 var https = require('https');
@@ -96,7 +96,7 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
 ```
 
 *marathon.json*, you san see how in the cmd we call first setup before starting the actual service.
-```
+```js
 {
   "id": "service",
   "container": {
@@ -144,14 +144,14 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
 
 For testing you can *dcos task exec ...* into another marathon service and use curl to call the former service.
 
-```
+```console
 curl --cacert .ssl/ca-bundle.crt https://service.marathon.l4lb.thisdcos.directory:8080
 ```
 
 ### a tls service endpoint implementation requiring client authentication
 
 *service.js*, this service implementation requires that that calling client autheticate via certificate. For that we set *requestCert* to true, and also configure the dc/os CA bundle.
-```
+```js
 var express = require('express');
 var http = require('http');
 var https = require('https');
@@ -189,7 +189,7 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
 ```
 
 *marathon.json*, you san see how in the cmd we call first setup before starting the actual service.
-```
+```js
 {
   "id": "service",
   "container": {
@@ -237,7 +237,7 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
 
 For testing you can *dcos task exec ...* into another marathon service and use curl to call the former service.
 
-```
+```console
 curl --cert service.crt --key service.key --cacert .ssl/ca-bundle.crt https://service.marathon.l4lb.thisdcos.directory:8080
 ```
 
