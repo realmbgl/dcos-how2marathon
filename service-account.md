@@ -19,6 +19,7 @@ dcos security org users grant my-service-acct dcos:superuser full
 
 ### configure the service with service account and service account secret
 
+*marathon.json*, configured service account and service account secret
 ```
 {
   "id": "service",
@@ -56,6 +57,31 @@ more on this in the tls section
 
 ### moustache templating
 
-...
+*marathon.json.mustache*, ...
+```
+{
+  "id": "service",
+  ...
+  "secrets": {
+    "service-acct-secret": {
+      "source": "{{service.service_acct_secret}}"
+    }
+  },
+  "container": {
+    "type": "MESOS",
+    ...
+    "volumes": [
+      {
+        "containerPath": "service_acct_secret",
+        "secret": "service-acct-secret"
+      }
+    ]
+  },
+  "env": {
+    "SERVICE_ACCOUNT": "{{service.service_acct}}"
+  },
+  "cmd": "...",
+}
+```
 
 
