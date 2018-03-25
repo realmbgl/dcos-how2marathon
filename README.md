@@ -36,13 +36,14 @@ This guide shows by sample how to develop enterprise grade marathon services sup
     - moustache templating, tls on/off, client authenticaton on/off
 
 
-- [healthcheck](healthcheck.md)
+- [healthchecks](healthchecks.md)
     - without tls
     - with tls
     - with tls and client authentication
     - moustache templating, tls on/off, client authenticaton on/off
 
-- placement constraint
+
+- placement constraints
 
 
 - volumes
