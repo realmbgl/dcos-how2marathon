@@ -3,7 +3,7 @@
 
 ### service names scoped by folders/groups
 
-marathon.json
+*marathon.json*, ...
 ```
 {
   "id": "/org1/space1/service",
@@ -19,7 +19,7 @@ marathon.json
 
 ### mapping fully qualified service name to vip name
 
-marathon.json
+*marathon.json*, ...
 ```
 {
   "id": "/org1/space1/service",
