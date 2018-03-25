@@ -47,7 +47,6 @@ In the actual vip name the slahes will be removed.
 
 ```
 orrg1space1service.marathon.l4lb.thisdcos.directory:8080
-
 ```
 
 ### moustache templating, configurable service name
