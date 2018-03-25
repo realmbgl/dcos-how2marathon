@@ -4,7 +4,7 @@
 ### without tls
 
 *marathon.json*, ...
-```
+```js
 {
   "id": "service",
   "container": {
@@ -27,7 +27,7 @@
 ### with tls
 
 *marathon.json*, ...
-```
+```js
 {
   "id": "service",
   "container": {
@@ -50,7 +50,7 @@
 ### with tls and client authentication
 
 *marathon.json*, ...
-```
+```js
 {
   "id": "service",
   "container": {
