@@ -4,7 +4,7 @@
 ### host networking
 
 marathon.json
-```
+```js
 {
   "id": "service",
   "container": {
@@ -32,7 +32,7 @@ marathon.json
 ### virtual networking
 
 marathon.json
-```
+```js
 {
   "id": "service",
   "container": {
