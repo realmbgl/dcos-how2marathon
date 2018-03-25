@@ -230,7 +230,7 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
   "env": {
     "SERVICE_ACCOUNT": "my-service-acct"
   },
-  "cmd": "chmod +x setup.sh && ./setup.sh && nodejs server.js $PORT"
+  "cmd": "chmod +x setup.sh && ./setup.sh && nodejs server.js $PORT0"
 }
 
 ```
