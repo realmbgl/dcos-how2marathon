@@ -4,9 +4,9 @@
 
 Marathon services out of the box have a .ssl folder in the sanbox containing 3 files.
 
-- ca-bundle.crt , the [dc/os CA bundle](https://docs.mesosphere.com/1.11/security/ent/tls-ssl/get-cert/)
-- scheduler.crt , the service certificate
-- scheduler.key , the service private key
+- ca-bundle.crt - the [dc/os CA bundle](https://docs.mesosphere.com/1.11/security/ent/tls-ssl/get-cert/)
+- scheduler.crt - the service certificate
+- scheduler.key - the service private key
 
 The schedule crt at the moment is created with the ip as host. If you have one marathon service calling a target marathon service using like the vip name, and the target service uses scheduler.crt to identify itself, then validation will fail. A JIRA is open to add alternative subjets like dns name , and vip name to scheduler.crt.
 
