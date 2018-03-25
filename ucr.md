@@ -2,7 +2,7 @@
 
 ### cmd and fetch
 
-```
+```js
 {
   "id": "service",
   ...
@@ -19,7 +19,7 @@
 
 ### cmd and image
 
-```
+```js
 {
   "id": "service",
   ...
@@ -36,7 +36,7 @@
 
 ### cmd and endless loop
 
-```
+```js
 {
   "id": "service",
   ...
@@ -51,11 +51,11 @@
 ### using container console, interactive container exploration
 
 
-```
+```console
 dcos task
 ```
 
-```
+```console
 dcos task exec -ti <task-id> bash
 ```
 
