@@ -42,11 +42,13 @@ This guide shows by sample how to develop enterprise grade marathon services sup
     - tls on and client-auth on
 
 
+- placement constraints
+
+
 - volumes
     - local persistent volumes
     - external persistent volumes
 
-- placement constraints
 
 - service configuration
     - service/endpoint configuration
