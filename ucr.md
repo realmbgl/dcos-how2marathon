@@ -1,7 +1,12 @@
 ## ucr
 
+
+### why ucr
+The [Universal Container Runtime (UCR)](http://mesos.apache.org/documentation/latest/container-image/) launches Mesos containers from binary executables and extends the Mesos container runtime to support provisioning Docker images. The UCR has many [advantages](https://docs.mesosphere.com/1.11/deploying-services/containerizers/) over the Docker Engine for running Docker images. 
+
 ### cmd and fetch
 
+*marathon.json*, showing how you can run e.g. jetty without building a docker image. The required binary packages, jre and jetty, are fetched into the sandbox. From the cmd you launch the jetty execution.
 ```js
 {
   "id": "service",
