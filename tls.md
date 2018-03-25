@@ -242,5 +242,58 @@ curl --cert service.crt --key service.key --cacert .ssl/ca-bundle.crt https://se
 ```
 
 
-### moustache templating, tls on/off
+### moustache templating, tls on/off, client authenticaton on/off
+
+*marathon.json*, ...
+```js
+{
+  "id": "service",
+  "container": {
+    "type": "MESOS",
+    "docker": {
+      "image": "...",
+      "forcePullImage": true
+    },
+    "volumes": [
+      {{#service.tls_enabled}}
+      {
+        "containerPath": "service_acct_secret",
+        "secret": "service-acct-secret"
+      }
+      {{/service.tls_enabled}}
+    ]
+  },
+  "fetch": [
+    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"},
+    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh"}
+  ],
+  {{#service.tls_enabled}}
+  "secrets": {
+    "service-acct-secret": {
+      "source": "{{service.service_acct_secret}}"
+    }
+  },
+  {{/service.tls_enabled}}
+  "networks": [
+    {
+      "mode": "host"
+    }
+  ],
+  "portDefinitions": [ {
+      "name": "web",
+      "port": 8080,
+      "protocol": "tcp",
+      "labels": {
+        "VIP_0": "service:8080"
+      }
+  } ],
+  "env": {
+    "SERVICE_ACCOUNT": "{{service.service_acct}}",
+    "TLS_ENABLED": {{service.tls_enabled}},
+    "CLIENT_AUTH_ENABLED": {{service.client_auth_enabled}}
+  },
+  "cmd": "chmod +x setup.sh && ./setup.sh && nodejs server.js $PORT0"
+}
+
+```
 
