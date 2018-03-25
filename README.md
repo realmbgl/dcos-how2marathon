@@ -33,14 +33,14 @@ This guide shows by sample how to develop enterprise grade marathon services sup
     - creating a certificate request
     - a tls service enpoint implementation
     - a tls service endpoint implementation requiring client authentication
-    - moustache templating, tls on/off
+    - moustache templating, tls on/off, client authenticaton on/off
 
 
 - healthcheck
-    - tls off
-    - tls on 
-    - tls on and client-auth on
-
+    - without tls
+    - with tls
+    - with tls and client authentication
+    - moustache templating, tls on/off, client authenticaton on/off
 
 - placement constraint
 
