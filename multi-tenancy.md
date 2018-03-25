@@ -43,6 +43,13 @@ marathon.json
 
 ```
 
+In the actual vip name the slahes will be removed.
+
+```
+orrg1space1service.marathon.l4lb.thisdcos.directory:8080
+
+```
+
 ### moustache templating, configurable service name
 
 As we learned the service name can contain slashes. You can use a template variable {{service.name}} aside from setting the id only in places that can deal with the slashes. The vip setting for example can handle it.
