@@ -4,7 +4,7 @@
 ### service names scoped by folders/groups
 
 *marathon.json*, ...
-```python
+```js
 {
   "id": "/org1/space1/service",
   "container": {
@@ -20,7 +20,7 @@
 ### mapping fully qualified service name to vip name
 
 *marathon.json*, ...
-```javascript
+```js
 {
   "id": "/org1/space1/service",
   "container": {
@@ -54,7 +54,7 @@ orrg1space1service.marathon.l4lb.thisdcos.directory:8080
 As we learned the service name can contain slashes. You can use a template variable {{service.name}} aside from setting the id only in places that can deal with the slashes. The vip setting for example can handle it.
 
 *marathon.json.moustache*, ...
-```javascript
+```js
 {
   "id": "{{service.name}}",
   "container": {
