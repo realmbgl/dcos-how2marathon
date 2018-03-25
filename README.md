@@ -36,7 +36,7 @@ This guide shows by sample how to develop enterprise grade marathon services sup
     - moustache templating, tls on/off, client authenticaton on/off
 
 
-- healthcheck
+- [healthcheck](healthcheck.md)
     - without tls
     - with tls
     - with tls and client authentication
