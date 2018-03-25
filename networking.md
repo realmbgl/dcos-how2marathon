@@ -31,7 +31,7 @@
 
 ### virtual networking
 
-marathon.json
+*marathon.json*, ...
 ```js
 {
   "id": "service",
