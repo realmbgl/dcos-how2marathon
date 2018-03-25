@@ -6,7 +6,7 @@ The [Universal Container Runtime (UCR)](http://mesos.apache.org/documentation/la
 
 ### cmd and fetch
 
-*marathon.json*, showing how you can run e.g. jetty without building a docker image. The required binary packages, jre and jetty, are fetched into the sandbox. From the cmd you launch the jetty execution.
+*marathon.json*, showing how you can run e.g. jetty without building a docker image. The required binary packages, jre and jetty, are fetched into the sandbox. From the cmd you launch jetty in the foreground.
 ```js
 {
   "id": "service",
@@ -24,6 +24,7 @@ The [Universal Container Runtime (UCR)](http://mesos.apache.org/documentation/la
 
 ### cmd and image
 
+*marathon.json*, showing how you can run an docker image using the ucr. The sample shows the usage of the nginx docker image. From the cmd you launch nginx in the foreground. 
 ```js
 {
   "id": "service",
@@ -41,6 +42,7 @@ The [Universal Container Runtime (UCR)](http://mesos.apache.org/documentation/la
 
 ### cmd and endless loop
 
+*marathon.json*, showing how you can keep the container long running by adding endless loop to the cmd. Its a handy way during development amd exploration of a container. You may have all the artifacts but want to explore configuration and execution in a more interactive way. The next section shows you how to get into the container.
 ```js
 {
   "id": "service",
@@ -55,11 +57,15 @@ The [Universal Container Runtime (UCR)](http://mesos.apache.org/documentation/la
 
 ### using container console, interactive container exploration
 
+The following two command allow you to ssh into a ucr container. Something that is handy during development, but also for later problem determination.
+
+The first command lists you all the running tasks. Pick the id of the task you want to ssh into.
 
 ```console
 dcos task
 ```
 
+Using the task-id with the following command gets you to the console of the container running the task.
 ```console
 dcos task exec -ti <task-id> bash
 ```
