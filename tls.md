@@ -15,6 +15,7 @@ In the next section we show how you can create your own certificate requests for
 
 ### creating a certificate request for your service
 
+*setup.sh* a scipt to create your specific service.crt and service.key file.
 ```
 #!/bin/bash
   
@@ -39,7 +40,7 @@ cat servicecert.json | jq -r .private_key > service.key
 
 ```
 
-marathon.json
+*marathon.json*, shows the download of the dc/os cli and the setup.sh script, and how you run setup.sh in cmd before any other execution.
 ```
 {
   "id": "service",
@@ -72,7 +73,7 @@ marathon.json
 
 ### a tls service enpoint implementation
 
-server.js
+*service.js*, a service endpoint implementation using node js with tls enabled, you can see how key and cert get configured with the files created from the setup.sh script.
 ```
 var express = require('express');
 var http = require('http');
@@ -94,7 +95,7 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
 
 ```
 
-marathon.json
+*marathon.json*, you san see how in the cmd we call first setup before starting the actual service.
 ```
 {
   "id": "service",
@@ -136,7 +137,7 @@ marathon.json
   "env": {
     "SERVICE_ACCOUNT": "my-service-acct"
   },
-  "cmd": "chmod +x setup.sh && ./setup.sh && nodejs server.js $PORT"
+  "cmd": "chmod +x setup.sh && ./setup.sh && nodejs service.js $PORT0"
 }
 
 ```
@@ -144,6 +145,7 @@ marathon.json
 
 ### a tls service endpoint implementation requiring client authentication
 
+*service.js*, this service implementation requires that that calling client autheticate via certificate. For that we set *requestCert* to true, and also configure the dc/os CA bundle.
 ```
 var express = require('express');
 var http = require('http');
@@ -181,7 +183,7 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
 
 ```
 
-marathon.json
+*marathon.json*, you san see how in the cmd we call first setup before starting the actual service.
 ```
 {
   "id": "service",
