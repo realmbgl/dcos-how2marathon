@@ -4,7 +4,7 @@
 ### service names scoped by folders/groups
 
 *marathon.json*, ...
-```json
+```
 {
   "id": "/org1/space1/service",
   "container": {
