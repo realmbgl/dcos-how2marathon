@@ -53,7 +53,7 @@ orrg1space1service.marathon.l4lb.thisdcos.directory:8080
 
 As we learned the service name can contain slashes. You can use a template variable {{service.name}} aside from setting the id only in places that can deal with the slashes. The vip setting for example can handle it.
 
-marathon-moustache.json
+*marathon.json.moustache*, ...
 ```
 {
   "id": "{{service.name}}",
