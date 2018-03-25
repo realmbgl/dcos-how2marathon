@@ -131,7 +131,7 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
       "port": 8080,
       "protocol": "tcp",
       "labels": {
-        "VIP_0": "node-server:8080"
+        "VIP_0": "service:8080"
       }
   } ],
   "env": {
@@ -142,6 +142,11 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
 
 ```
 
+For testing you can *dcos task exec ...* into another marathon service and use curl to call the former service.
+
+```
+curl --cacert .ssl/ca-bundle.crt https://service.marathon.l4lb.thisdcos.directory:8080
+```
 
 ### a tls service endpoint implementation requiring client authentication
 
@@ -219,7 +224,7 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
       "port": 8080,
       "protocol": "tcp",
       "labels": {
-        "VIP_0": "node-server:8080"
+        "VIP_0": "service:8080"
       }
   } ],
   "env": {
@@ -229,6 +234,13 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
 }
 
 ```
+
+For testing you can *dcos task exec ...* into another marathon service and use curl to call the former service.
+
+```
+curl --cert service.crt --key service.key --cacert .ssl/ca-bundle.crt https://service.marathon.l4lb.thisdcos.directory:8080
+```
+
 
 ### moustache templating, tls on/off
 
