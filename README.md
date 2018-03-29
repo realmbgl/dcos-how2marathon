@@ -36,6 +36,9 @@ This guide shows by sample how to develop enterprise grade marathon services sup
     - moustache templating, tls on/off, client authenticaton on/off
 
 
+- kerberos
+
+
 - [healthchecks](healthchecks.md)
     - without tls
     - with tls
