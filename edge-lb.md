@@ -1,7 +1,7 @@
 ## edge-lb
 
 
-### without tls
+### pool config without tls
 
 ```
 {
@@ -33,7 +33,7 @@
 }
 ```
 
-### with tls
+### pool config with tls
 
 ```
 {
