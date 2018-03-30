@@ -60,6 +60,6 @@ This guide shows by sample how to develop enterprise grade marathon services sup
     - depending service configuration 
     
 
-- edge-lb
+- [edge-lb](edge-lb.md)
 
 
