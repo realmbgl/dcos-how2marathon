@@ -2,7 +2,7 @@
 
 This guide shows by sample how to develop enterprise grade marathon services supporting the following.
 
-- [ucr](ucr.md)
+- [universal containerizer (ucr)](ucr.md)
     - why ucr
     - cmd and fetch
     - cmd and image
