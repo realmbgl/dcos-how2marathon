@@ -52,14 +52,12 @@ This guide shows by sample how to develop enterprise grade marathon services sup
 - volumes
     - local persistent volumes
     - external persistent volumes
+    
+
+- [edge-lb](edge-lb.md)
 
 
 - service configuration
     - service/endpoint configuration
     - implementation configuration
     - depending service configuration 
-    
-
-- [edge-lb](edge-lb.md)
-
-
