@@ -34,7 +34,7 @@ The [Universal Container Runtime (UCR)](http://mesos.apache.org/documentation/la
     "docker": {
       "image": "nginx:latest",
       "forcePullImage": true
-    },
+    }
   },
   "cmd": "nginx -g 'daemon off;'"
 }
