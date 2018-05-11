@@ -52,9 +52,3 @@ This guide shows by sample how to develop enterprise grade marathon services sup
     
 
 - [edge-lb](edge-lb.md)
-
-
-- service configuration
-    - service/endpoint configuration
-    - implementation configuration
-    - depending service configuration 
