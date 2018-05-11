@@ -22,9 +22,9 @@ Author you marathon.yml file, then run it.
 yml2json marathon.yml | dcos marathon app add
 ```
 
-### samples
+### some samples
 
-A kafka producer service.
+A kafka producer service using inline python.
 ```
 id: k-producer
 cpus: 0.1
@@ -49,7 +49,7 @@ cmd: |
   python function.py
 ```
 
-A kafka consumer service.
+A kafka consumer service using inline python.
 ```
 id: k-consumer
 cpus: 0.1
