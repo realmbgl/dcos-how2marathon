@@ -1,5 +1,6 @@
 ## using marathon yml
 
+Use yml instead of json to author your marathon apps/services. It is much less verbose and is especially handy when you have to author multi-line commands.
 
 
 ### install yml2json
