@@ -3,7 +3,7 @@
 
 ### without tls
 
-*marathon.json*, ...
+*marathon.json*, showing healthcheck without TLS.
 ```js
 {
   "id": "service",
@@ -26,7 +26,7 @@
 
 ### with tls
 
-*marathon.json*, ...
+*marathon.json*, showing healthcheck with TLS.
 ```js
 {
   "id": "service",
@@ -49,7 +49,7 @@
 
 ### with tls and client authentication
 
-*marathon.json*, ...
+*marathon.json*, showing healthcheck with TLS and client authentication.
 ```js
 {
   "id": "service",
@@ -72,7 +72,7 @@
 
 ### moustache templating, tls on/off, client authenticaton on/off
 
-*marathon.json.moustache*, ...
+*marathon.json.moustache*, showing how to switch the healthcheck depending on whether TLS is configured or not. In the TLS case also crt and key are passed, they are ignored if the service does not require client authentication.
 ```js
 {
   "id": "service",
