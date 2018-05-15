@@ -3,7 +3,7 @@
 
 ### service names scoped by folders/groups
 
-*marathon.json*, ...
+*marathon.json*, showing id set to foldered service name.
 ```js
 {
   "id": "/org1/space1/service",
@@ -19,7 +19,7 @@
 
 ### mapping fully qualified service name to vip name
 
-*marathon.json*, ...
+*marathon.json*, showing foldere service name used in id and vip.
 ```js
 {
   "id": "/org1/space1/service",
