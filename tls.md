@@ -244,7 +244,7 @@ curl --cert service.crt --key service.key --cacert .ssl/ca-bundle.crt https://se
 
 ### moustache templating, tls on/off, client authenticaton on/off
 
-*marathon.json*, ...
+*marathon.json*, showing how to make TLS and client authentication configurable.
 ```js
 {
   "id": "service",
