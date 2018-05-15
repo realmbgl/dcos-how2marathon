@@ -25,7 +25,7 @@ dcos security org users grant my-service-acct dcos:superuser full
   "id": "service",
   ...
   "secrets": {
-    "service-acct-secret": {
+    "service-account-secret": {
       "source": "my-service-acct-secret"
     }
   },
@@ -34,8 +34,8 @@ dcos security org users grant my-service-acct dcos:superuser full
     ...
     "volumes": [
       {
-        "containerPath": "service_acct_secret",
-        "secret": "service-acct-secret"
+        "containerPath": "service_account_secret",
+        "secret": "service-account-secret"
       }
     ]
   },
