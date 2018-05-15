@@ -3,7 +3,7 @@
 
 ### host networking
 
-*marathon.json*, ...
+*marathon.json*, showing *host* networking configuration, the port gets auto assigned and is available to the executable via environment variable.
 ```js
 {
   "id": "service",
@@ -31,7 +31,7 @@
 
 ### virtual networking
 
-*marathon.json*, ...
+*marathon.json*, showing *virtual networking* configuration. Virtual networking provides an ip per container, the port is the container port.
 ```js
 {
   "id": "service",
@@ -62,7 +62,7 @@
 
 ### moustache templating, virtual networking on/off
 
-*marathon.json*, ...
+*marathon.json*, showing how to make host or virtual networking a configuration option.
 ```js
 {
   "id": "service",
