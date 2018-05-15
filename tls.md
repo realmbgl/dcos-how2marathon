@@ -206,8 +206,8 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
     ]
   },
   "fetch": [
-    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"},
-    {"uri": "https://s3.amazonaws.com/.../setup.sh"}
+    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos", "executable": true},
+    {"uri": "https://s3.amazonaws.com/.../setup.sh", "executable": true}
   ],
   "secrets": {
     "service-account-secret": {
@@ -264,8 +264,8 @@ curl --cert service.crt --key service.key --cacert .ssl/ca-bundle.crt https://se
     ]
   },
   "fetch": [
-    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"},
-    {"uri": "https://s3.amazonaws.com/.../setup.sh"}
+    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos", "executable": true},
+    {"uri": "https://s3.amazonaws.com/.../setup.sh", "executable": true}
   ],
   {{#service.tls_enabled}}
   "secrets": {
