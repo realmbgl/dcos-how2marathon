@@ -57,7 +57,7 @@ The [Universal Container Runtime (UCR)](http://mesos.apache.org/documentation/la
 
 ### using container console, interactive container exploration
 
-The following two command allow you to ssh into a ucr container. Something that is handy during development, but also for later problem determination.
+The following two commands allow you to ssh into a ucr container. Something that is handy during development, but also for later problem determination.
 
 The first command lists you all the running tasks. Pick the id of the task you want to ssh into.
 
