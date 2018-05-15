@@ -69,4 +69,5 @@ Using the task-id with the following command gets you to the console of the cont
 ```console
 dcos task exec -ti <task-id> bash
 ```
+More on *dcos taks exec ...* can be found [here](https://docs.mesosphere.com/1.11/monitoring/debugging/task-exec/).
 
