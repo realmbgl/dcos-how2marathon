@@ -49,24 +49,24 @@ cat servicecert.json | jq -r .private_key > service.key
     ...
     "volumes": [
       {
-        "containerPath": "service_acct_secret",
-        "secret": "service-acct-secret"
+        "containerPath": "service_account_secret",
+        "secret": "service-account-secret"
       }
     ]
   },
   "fetch": [
-    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"},
-    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh"}
+    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos", "executable": true},
+    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh", "executable": true}
   ],
   "secrets": {
-    "service-acct-secret": {
+    "service-account-secret": {
       "source": "my-service-acct-secret"
     }
   },
   "env": {
     "SERVICE_ACCOUNT": "my-service-acct"
   },
-  "cmd": "chmod +x setup.sh && ./setup.sh && ..."
+  "cmd": "./setup.sh && ..."
 }
 
 ```
