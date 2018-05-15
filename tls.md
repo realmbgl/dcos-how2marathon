@@ -56,7 +56,7 @@ cat servicecert.json | jq -r .private_key > service.key
   },
   "fetch": [
     {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos", "executable": true},
-    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh", "executable": true}
+    {"uri": "https://s3.amazonaws.com/.../setup.sh", "executable": true}
   ],
   "secrets": {
     "service-account-secret": {
@@ -107,17 +107,17 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
     },
     "volumes": [
       {
-        "containerPath": "service_acct_secret",
-        "secret": "service-acct-secret"
+        "containerPath": "service_account_secret",
+        "secret": "service-accountt-secret"
       }
     ]
   },
   "fetch": [
-    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"},
-    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh"}
+    {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos", "executable": true},
+    {"uri": "https://s3.amazonaws.com/.../setup.sh", "executable": true}
   ],
   "secrets": {
-    "service-acct-secret": {
+    "service-account-secret": {
       "source": "my-service-acct-secret"
     }
   },
@@ -137,7 +137,7 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
   "env": {
     "SERVICE_ACCOUNT": "my-service-acct"
   },
-  "cmd": "chmod +x setup.sh && ./setup.sh && nodejs service.js $PORT0"
+  "cmd": "./setup.sh && nodejs service.js $PORT0"
 }
 
 ```
@@ -200,17 +200,17 @@ https.createServer(sslOptions, server).listen(process.argv[2], "0.0.0.0")
     },
     "volumes": [
       {
-        "containerPath": "service_acct_secret",
-        "secret": "service-acct-secret"
+        "containerPath": "service_account_secret",
+        "secret": "service-account-secret"
       }
     ]
   },
   "fetch": [
     {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"},
-    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh"}
+    {"uri": "https://s3.amazonaws.com/.../setup.sh"}
   ],
   "secrets": {
-    "service-acct-secret": {
+    "service-account-secret": {
       "source": "my-service-acct-secret"
     }
   },
@@ -257,20 +257,20 @@ curl --cert service.crt --key service.key --cacert .ssl/ca-bundle.crt https://se
     "volumes": [
       {{#service.tls_enabled}}
       {
-        "containerPath": "service_acct_secret",
-        "secret": "service-acct-secret"
+        "containerPath": "service_account_secret",
+        "secret": "service-account-secret"
       }
       {{/service.tls_enabled}}
     ]
   },
   "fetch": [
     {"uri": "https://downloads.dcos.io/binaries/cli/linux/x86-64/dcos-1.11/dcos"},
-    {"uri": "https://s3.amazonaws.com/mbgl-universe/setup.sh"}
+    {"uri": "https://s3.amazonaws.com/.../setup.sh"}
   ],
   {{#service.tls_enabled}}
   "secrets": {
-    "service-acct-secret": {
-      "source": "{{service.service_acct_secret}}"
+    "service-accountt-secret": {
+      "source": "{{service.service_account_secret}}"
     }
   },
   {{/service.tls_enabled}}
@@ -288,11 +288,11 @@ curl --cert service.crt --key service.key --cacert .ssl/ca-bundle.crt https://se
       }
   } ],
   "env": {
-    "SERVICE_ACCOUNT": "{{service.service_acct}}",
+    "SERVICE_ACCOUNT": "{{service.service_account}}",
     "TLS_ENABLED": {{service.tls_enabled}},
     "CLIENT_AUTH_ENABLED": {{service.client_auth_enabled}}
   },
-  "cmd": "chmod +x setup.sh && ./setup.sh && nodejs server.js $PORT0"
+  "cmd": "./setup.sh && nodejs server.js $PORT0"
 }
 
 ```
