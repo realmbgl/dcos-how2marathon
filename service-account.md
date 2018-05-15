@@ -3,9 +3,9 @@
 
 ### when do you need a service account
 
-You need a service account if your service needs to interact with dc/os, e.g to create a certificate and key for your service.
+A service account is required if your service needs to interact with dc/os, e.g to create a certificate sigining request.
 
-### create service accout and service account secret
+### create service account and service account secret
 
 ```console
 dcos security org service-accounts keypair priv.pem pub.pem
