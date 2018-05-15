@@ -3,7 +3,7 @@
 
 ### when do you need a service account
 
-... like you want to interact with dc/os to create a certificate and key for your service ...
+You need a service account if your service needs to interact with dc/os, e.g to create a certificate and key for your service.
 
 ### create service accout and service account secret
 
@@ -19,7 +19,7 @@ dcos security org users grant my-service-acct dcos:superuser full
 
 ### configure the service with service account and service account secret
 
-*marathon.json*, configured service account and service account secret
+*marathon.json*, shows configured service account and service account secret
 ```js
 {
   "id": "service",
@@ -42,11 +42,11 @@ dcos security org users grant my-service-acct dcos:superuser full
   "env": {
     "SERVICE_ACCOUNT": "my-service-acct"
   },
-  "cmd": "...",
+  "cmd": "..."
 }
 ```
 
-using it to login to dc/os from your service
+Your service can use the dcos cli to login into dc/os.
 ```console
 cat service_account_secret | jq -r .private_key > service_acct_key.pem 
 
@@ -55,11 +55,11 @@ chmod 600 service_acct_key.pem
 dcos cluster setup https://leader.mesos --ca-certs=.ssl/ca-bundle.crt --username=$SERVICE_ACCOUNT --private-key=service_acct_key.pem
 ```
 
-more on this in the tls section
+In the TLS section you will learn how after login you can create certificate sigining requests.
 
 ### moustache templating
 
-*marathon.json.mustache*, ...
+*marathon.json.mustache*, showing how you can make service account and service account secret configurable.
 ```js
 {
   "id": "service",
@@ -82,7 +82,7 @@ more on this in the tls section
   "env": {
     "SERVICE_ACCOUNT": "{{service.service_acct}}"
   },
-  "cmd": "...",
+  "cmd": "..."
 }
 ```
 
