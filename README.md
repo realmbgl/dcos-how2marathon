@@ -1,6 +1,7 @@
 # Developing Enterprise Grade Marathon Services
 
-This guide shows by sample how to develop enterprise grade marathon services supporting the following. Note that support for service accounts, tls, and edge-lb is only available with dc/os enterprise.
+This guide shows by sample how to develop enterprise grade marathon services supporting the following. 
+**Note:** Support for service accounts, tls, and edge-lb is only available with dc/os enterprise.
 
 - [universal containerizer (ucr)](ucr.md)
     - why ucr
