@@ -42,7 +42,7 @@ The [Universal Container Runtime (UCR)](http://mesos.apache.org/documentation/la
 
 ### cmd and endless loop
 
-*marathon.json*, showing how you can keep the container long running by adding endless loop to the cmd. Its a handy way during development amd exploration of a container. You may have all the artifacts but want to explore configuration and execution in a more interactive way. The next section shows you how to get into the container.
+*marathon.json*, showing how you can keep the container long running by adding endless loop to the cmd. Its a handy way during development and exploration of a container. You may have all the artifacts but want to explore configuration and execution in a more interactive way. The next section shows you how to get into the container.
 ```js
 {
   "id": "service",
@@ -57,7 +57,7 @@ The [Universal Container Runtime (UCR)](http://mesos.apache.org/documentation/la
 
 ### using container console, interactive container exploration
 
-The following two commands allow you to ssh into a ucr container. Something that is handy during development, but also for later problem determination.
+The following two commands allow you to ssh into a ucr container. Something that is handy during development, but also for problem determination.
 
 The first command lists you all the running tasks. Pick the id of the task you want to ssh into.
 
