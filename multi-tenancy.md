@@ -3,7 +3,7 @@
 
 ### service names scoped by folders/groups
 
-*marathon.json*, showing id set to foldered service name.
+*marathon.json*, showing id set to a foldered service name.
 ```js
 {
   "id": "/org1/space1/service",
