@@ -19,7 +19,7 @@
 
 ### mapping fully qualified service name to vip name
 
-*marathon.json*, showing foldere service name used in id and vip.
+*marathon.json*, showing foldered service name used in id and vip.
 ```js
 {
   "id": "/org1/space1/service",
