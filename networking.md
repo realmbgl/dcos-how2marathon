@@ -18,7 +18,7 @@
   ],
   "portDefinitions": [ {
       "name": "web",
-      "port": 8080,
+      "port": 0,
       "protocol": "tcp",
       "labels": {
         "VIP_0": "service:8080"
